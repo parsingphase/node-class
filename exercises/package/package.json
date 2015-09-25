@@ -1,0 +1,12 @@
+{
+  "name": "foo",
+  "version": "0.0.1",
+  "description": "This is a fun package",
+  "main": "",
+  "scripts": {},
+  "author": "Richard George <richard@phase.org>",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
