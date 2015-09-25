@@ -16,4 +16,15 @@ Prefer promises for apps, callbacks for servers??
 
 lodash instead of for loops?
 
+* findWhere
+* indexBy
+
 require.main to see if module is running 'standalone': http://heyrod.com/snippet/s/nodejs-require-main.html
+
+http://swagger.io - API framework / doc'n
+
+#### Mocha
+
+describe, it
+
+* describes can be nested
