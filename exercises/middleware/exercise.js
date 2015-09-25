@@ -11,6 +11,17 @@ var game = require("./game");
 // - ensure to keep the chain going if there is no error
 module.exports = function authenticate(req, res, next) {
   // TODO success: augment res.locals
-  // TODO success: keep chain
-  // TODO error: send 401 + json
-}
+  var playerId = req.session.playerId;
+  game.getPlayer(playerId, cb);
+
+  function cb(error, player) {
+    if (error) {
+      // TODO error: send 401 + json
+      res.status(401).send({error: 'No player'});
+    } else {
+      // TODO success: keep chain
+      res.locals.player = player;
+      next();
+    }
+  }
+};
