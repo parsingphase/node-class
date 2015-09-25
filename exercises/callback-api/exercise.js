@@ -7,7 +7,12 @@ exports.safeSquare = function(n, cb) {
   // TODO validate n
   // TODO pass on error
   // TODO pass on result
-}
+  if (!isNaN(Number(n))) {
+    return cb(null, n * n);
+  } else {
+    cb(new Error(n + 'is not numeric'));
+  }
+};
 
 
 // TODO timeExecution takes a function to run, and a callback
@@ -20,5 +25,15 @@ exports.timeExecution = function(runMe, cb) {
   runMe(function(err, value) {
     var time = new Date - start;
     // TODO pass on result
+
+    // short version
+    cb(err, value, time);
+
+    // long version
+    //if (err) {
+    //  cb(err)
+    //} else {
+    //  cb(null, value, time);
+    //}
   });
-}
+};
